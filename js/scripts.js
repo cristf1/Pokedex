@@ -7,16 +7,20 @@ let pokemonRepository = (function (){
     {name:'Squirtle', height: 5, types:'water'}
   ];
 
-  pokemonList.forEach(pokemonPrint)
+  function addListItem(pokemon){
+    let pokemonOrder= document.querySelector('.pokemon-list');
+    let listItem= document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText= pokemon.name;
+    button.classList.add('button-class');
+    listItem.appendChild(button);
+    pokemonOrder.appendChild(listItem);
+    button.addEventListener('click', function() {showDetails(pokemon)});
+  }
 
-  function pokemonPrint(pokemon){
-    document.write("<br>" + pokemon.name + " (height: " + pokemon.height + ")" );
-      if (pokemon.height > 6){
-        document.write(" - Wow that\'s big!")
-        }
-      else {"<br>"
-    }
-  };
+  function showDetails(pokemon){
+    console.log(pokemon);
+  }
 
   function getAll(){
     return pokemonList;
@@ -29,8 +33,13 @@ let pokemonRepository = (function (){
   return {
     getAll: getAll,
     add: add,
+    addListItem: addListItem,
   }
 
 })();
 
-pokemonRepository.getAll();
+console.log(pokemonRepository.getAll());
+
+pokemonRepository.getAll().forEach(function(pokemon){
+  pokemonRepository.addListItem(pokemon);
+});
