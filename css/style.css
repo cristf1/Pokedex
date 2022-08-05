@@ -1,8 +1,12 @@
 .button-class{
   border: 2 lightblue;
-  height:50;
-  margin-bottom: 10;
-  list-style-type: none;
+  height:50px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.pokemon-list li {
+  list-style: none;
 }
 
 
