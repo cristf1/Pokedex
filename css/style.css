@@ -17,7 +17,12 @@ h1{
 }
 
 
-/*.pokemon-modal-container{
+#pokemon-modal-container {
+  display: none;
+}
+
+
+#pokemon-modal-container.is-visible{
    position: fixed;
   padding: 20px;
   box-sizing: border-box;
@@ -26,17 +31,13 @@ h1{
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-
-
   z-index: 999;
-
-
   overflow: auto;
-
-
   display: grid;
   text-align: center;
-}*/
+}
+
+
 
 .show-pokemon-modal{
   margin: auto;
@@ -46,5 +47,5 @@ h1{
   padding: 15px;
   width: 100%;
   max-width: 700px;
-  text-align: left;
+  text-align: center;
 }
