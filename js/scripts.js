@@ -59,7 +59,7 @@ let pokemonRepository = (function() {
         let pokemonModalContainer = document.querySelector('#pokemon-modal-container');
         let pokemonModalContent= document.createElement('div');
         //Clear all existing modal content
-        pokemonModalContent.innerHTML = ''
+        pokemonModalContainer.innerHTML = ''
 
 
         pokemonModalContent.classList.add('show-pokemon-modal');
@@ -74,14 +74,18 @@ let pokemonRepository = (function() {
         closeButtonElement.innerText = 'Close';
         closeButtonElement.addEventListener('click', hideModal);
 
-        let titleElement = document.createElement('h1');
+        let titleElement = document.createElement('h4');
         titleElement.innertext = pokemonName;
 
-        let imageElement = document.createElement('p');
-        imageElement.innertext = pokemonImage;
+        let imageElement = document.createElement('img');
+        imageElement.setAttribute('src', pokemonImage);
+        imageElement.setAttribute('alt', "Poke-IMG")
 
         let heightElement = document.createElement('p');
         heightElement.innertext = pokemonHeight;
+
+        console.log(titleElement);
+        console.log(heightElement);
 
         pokemonModalContent.classList.add('is-visible');
 
