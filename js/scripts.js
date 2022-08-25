@@ -93,7 +93,7 @@ let pokemonRepository = (function() {
     imageElement.setAttribute('alt', "Poke-IMG");
 
     let heightElement = document.createElement('p');
-    heightElement.innerText = item.height;
+    heightElement.innerText = 'Height: ' + item.height;
     //heightElement.classList.add('modal-body');
 
     console.log(titleElement);
