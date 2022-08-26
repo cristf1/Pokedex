@@ -32,6 +32,7 @@ let pokemonRepository = (function() {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
+      item.weight= details.weight;
     }).catch(function(error) {
       console.log(error);
     });
@@ -45,7 +46,7 @@ let pokemonRepository = (function() {
     button.innerText = pokemon.name;
     button.classList.add('btn');
     button.setAttribute('data-toggle', 'modal');
-    button.setAttribute('data-target', '#pokemonDetailModal')
+    button.setAttribute('data-target', '#modal-container')
     //button.classList.add('btn-primary')
     listItem.classList.add('pokemon-list');
     listItem.classList.add('group-list-item');
@@ -93,11 +94,14 @@ let pokemonRepository = (function() {
     //titleElement.innerText = item.name;
     //titleElement.classList.add('pokemon-name');
 
-   //let imageElement = $('<img class='modal-img'>');
-    //imageElement.setAttribute('src', item.imageUrl);
+    let imageElement = $('<img class="pokemon-img">');
+    imageElement.attr('src', item.imageUrl);
+
     //imageElement.setAttribute('alt', "Poke-IMG");
 
     let heightElement = $('<p>' + 'Height: ' + item.height +'</p>');
+    let weightElement = $('<p>' + 'Weight: ' + item.weight +'</p>');
+
 
     //heightElement.innerText = 'Height: ' + item.height;
     //heightElement.classList.add('modal-body');
@@ -106,8 +110,9 @@ let pokemonRepository = (function() {
     //console.log(heightElement);
 
     pokemonName.append(titleElement);
-//modalBody.append(imageElement);
     modalBody.append(heightElement);
+    modalBody.append(weightElement);
+    modalBody.append(imageElement);
 
     //pokemonModalContent.classList.add('is-visible');
 
@@ -120,15 +125,10 @@ let pokemonRepository = (function() {
     //pokemonModalContainer.classList.add('is-visible');*/
  }
 
-    function hideModal() {
+   /* function hideModal() {
       pokemonModalContainer.classList.remove('is-visible');
-    }
+    } */
 
-
-
-  function hideModal() {
-    pokemonModalContainer.classList.remove('is-visible');
-  }
 
   function getAll() {
     return pokemonList;
