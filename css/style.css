@@ -1,8 +1,8 @@
-/*.pokemon-list li {
+.pokemon-list li {
   list-style: none;
 }
 
-.button-class{
+.btn{
   border: 2px solid lightblue;
   height:50px;
   width: 200px;
@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 
-
+/*
 h4{
   font-family: 'Shadows Into Light', cursive;
   margin: 15px
