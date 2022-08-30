@@ -22,7 +22,7 @@ let pokemonRepository = (function() {
     }).catch(function(error) {
       console.log(error);
     });
-  };
+  }
 
   function loadDetails(item) {
     let url = item.detailsUrl;
@@ -62,16 +62,16 @@ let pokemonRepository = (function() {
       console.log(item);
       showModal(item);
     })
-  };
+  }
 
  function showModal(item) {
    // let pokemonModalContainer = document.querySelector('#pokemon-modal-container');
    // pokemonModalContainer.innerHTML = ''
    // let pokemonModalContent = document.createElement('div');
 
-    let modalBody = $(".modal-body");
+    let modalBody = $('.modal-body');
    // let modalHeader = $(".modal-header");
-    let pokemonName = $(".pokemon-name");
+    let pokemonName = $('.pokemon-name');
 
     //Clear all existing modal content
 
@@ -89,7 +89,7 @@ let pokemonRepository = (function() {
     closeButtonElement.innerText = 'Close';
     closeButtonElement.addEventListener('click', hideModal);*/
 
-    let titleElement = $("<h1>" + item.name + "</h1>");
+    let titleElement = $('<h1>' + item.name + '</h1>');
 
     //titleElement.innerText = item.name;
     //titleElement.classList.add('pokemon-name');
